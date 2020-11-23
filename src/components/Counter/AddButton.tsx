@@ -2,9 +2,9 @@ import { TextField } from "@material-ui/core";
 import Button from "@material-ui/core/Button/Button";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Actions } from "../stores/counter/actions";
+import { Actions } from "../../stores/counter/actions";
 
-function AddButton() {
+function AddControll() {
   const dispatch = useDispatch();
   const [incrementalValue, setIncrementalValue] = useState(1);
 
@@ -26,4 +26,4 @@ function AddButton() {
     </div>
   );
 }
-export default AddButton;
+export default AddControll;
