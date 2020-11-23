@@ -1,10 +1,10 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../stores/reducers";
 
 function Counter() {
-  const num = useSelector((state) => state);
-  // @ts-ignore
-  return <div> {num.add.count} </div>;
+  const num = useSelector((state: RootState) => state.counter.num);
+  return <div> {num} </div>;
 }
 
 export default Counter;
