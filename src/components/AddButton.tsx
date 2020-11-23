@@ -6,18 +6,19 @@ import { Actions } from "../stores/counter/actions";
 
 function AddButton() {
   const dispatch = useDispatch();
-  const [incrementalValue, setIncrementalValue] = useState(0);
+  const [incrementalValue, setIncrementalValue] = useState(1);
 
   return (
     <div>
       <TextField
         onChange={(e) => setIncrementalValue(Number.parseInt(e.target.value))}
-      >
-        {incrementalValue}
-      </TextField>
+        error={isNaN(incrementalValue)}
+        defaultValue={incrementalValue}
+      ></TextField>
 
       <Button
         variant={"outlined"}
+        disabled={isNaN(incrementalValue)}
         onClick={() => dispatch(Actions.Add(incrementalValue))}
       >
         add
