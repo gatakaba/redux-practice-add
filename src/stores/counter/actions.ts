@@ -6,7 +6,7 @@ import { counterState } from "./model";
 const actionCreator = actionCreatorFactory();
 
 export const Actions = {
-  Add: actionCreator(ADD),
+  Add: actionCreator<number>(ADD),
 };
 
 export type ActionsType = ActionType<typeof Actions>;
