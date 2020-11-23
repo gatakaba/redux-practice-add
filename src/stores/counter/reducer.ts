@@ -8,6 +8,10 @@ export const initialState: counterState = {
 
 export const CounterReducers = reducerWithInitialState<counterState>(
   initialState
-).case(Actions.Add, (state, value) => {
-  return { num: state.num + value };
-});
+)
+  .case(Actions.Add, (state, value) => {
+    return { num: state.num + value };
+  })
+  .case(Actions.Subtract, (state, value) => {
+    return { num: state.num - value };
+  });

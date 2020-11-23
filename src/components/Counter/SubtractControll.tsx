@@ -4,26 +4,27 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../stores/counter/actions";
 
-function AddControll() {
+function SubtractControll() {
   const dispatch = useDispatch();
-  const [incrementalValue, setIncrementalValue] = useState(1);
+  const [decrementalValue, setDecrementalValue] = useState(1);
 
   return (
     <div>
       <TextField
-        onChange={(e) => setIncrementalValue(Number.parseInt(e.target.value))}
-        error={isNaN(incrementalValue)}
-        defaultValue={incrementalValue}
+        onChange={(e) => setDecrementalValue(Number.parseInt(e.target.value))}
+        label={"Decremental Value"}
+        error={isNaN(decrementalValue)}
+        defaultValue={decrementalValue}
       ></TextField>
 
       <Button
         variant={"outlined"}
-        disabled={isNaN(incrementalValue)}
-        onClick={() => dispatch(Actions.Add(incrementalValue))}
+        disabled={isNaN(decrementalValue)}
+        onClick={() => dispatch(Actions.Subtract(decrementalValue))}
       >
         add
       </Button>
     </div>
   );
 }
-export default AddControll;
+export default SubtractControll;
